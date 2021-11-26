@@ -43,6 +43,7 @@ body {
   font-family: var(--body-font);
   font-size: var(--normal-font-size);
   overflow: hidden;
+  background-image: url(/assets/img/background.jpg);
 }
 
 h1,
@@ -56,12 +57,17 @@ ul {
 
 ul {
   list-style: none;
+  float: right;
+  display: flex;
+
 }
 
 a {
   text-decoration: none;
-  color: #fff;
+  color: black;
   cursor: pointer;
+  padding-right: 30px;
+
 }
 
 img {
@@ -76,9 +82,35 @@ img {
 
 /* Content */
 
-  
+.background-img{
 
+}
+
+nav{
+  justify-content: space-between;
+  display: flex;
+  height: 4rem;
+  align-items: center;
+}
+
+
+.nav_log{
+  font-size: 30px;
+  color: plum;
+}
+
+.menu{
+  
+}
+
+.menu p{
+  display: inline;
+  padding-left: 30px;
+  font-size: 30px;
+}
 /* Social Media */
+
+
 
 .social-media {
   position: fixed;
