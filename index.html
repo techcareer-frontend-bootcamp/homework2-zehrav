@@ -13,62 +13,53 @@
 <body>
 
     <!-- HEADER -->
-    <header>
-      <nav class="nav">
-          <a href="" class="nav_logo">
-              <h1>Music Store </h1>
-              <span></span>
-          </a>
-<div class="nav_menu">
-    <ul>
-        <li><a href="#">Home</a></li>
-        <li><a href="#">About</a></li>
-        <li><a href="#">Top5</a></li>
-        <li><a href="#">Library</a></li>
-        <li><a href="#">Connect</a></li>
-    </ul>
-</div>
-</nav>
-      <!--  <div class="menu">   
-        <p>ZehraCode</p>
-        <ul>
-           <li><a href="#">Home</a></li>
-           <li><a href="#">About</a></li>
-           <li><a href="#">Top5</a></li>
-           <li><a href="#">Library</a></li>
-           <li><a href="#">Connect</a></li>
-       </ul> --> 
-    </div> 
+    <header id="header">
+  <nav class="nav">
+      <a href="#" class="nav__logo">Logo <span>Area</span></a>
+      <div class="nav__menu" id="nav-menu">
+          <ul class="nav__list">
+              <li class="nav__item"><a href="" class="nav__link active"> Home </a></li>
+              <li class="nav__item"><a href="" class="nav__link">About</a></li>
+              <li class="nav__item"><a href="" class="nav__link">Top5</a></li>
+              <li class="nav__item"><a href="" class="nav__link">Library</a></li>
+              <li class="nav__item"><a href="" class="nav__link">Contact</a></li>
+          </ul>
+      </div>
+
+      <div class="nav__toggle" id="nav-toggle">
+          <i class="bx bx-menu"></i>
+      </div>
+  </nav>
     </header>
 
     <!-- MAIN CONTENT -->
     <main>
-
         <!-- HOME --> 
-        <section class="home">
-        <div></div>
-        <div></div>
-        <div></div>
-
-        </section>
-
-<section class="context">
-    <div ><h1>NEVER STOP LISTENNING</h1></div> 
-    <div class="click">
-        <small>Click Here To Listen</small>
-        <i class='bx bx-play'></i>
+<section class="home">
+    <h1 class="home__title">
+        NEVER <br> STOP <br> LISTENNING
+    </h1>
+    <div class="home__play">
+        <div class="home_play-text">Click here to listen</div>
+        <a href="#" class="home__play-icon">
+            <i class="bx bx-play-circle bx-lg"></i>
+        </a>
     </div>
 </section>
-
     </main>
 
-    
     <div class="social-media">
-        <a href="#" target="_blank" rel="noopener noreferrer">
+        <a href="#" target="_blank" rel="noopener noreferrer"> <!--bazı sitelere gittiği zaman hangi siteden geldiğini gizlemek için-->
             <i class='bx bxl-youtube'></i>
         </a> 
-        
-
+   
+        <a href="#" target="_blank" rel="noopener noreferrer">
+            <i class='bx bxl-instagram'></i>
+        </a> 
+ 
+        <a href="#" target="_blank" rel="noopener noreferrer">
+            <i class='bx bxl-twitter'></i>
+        </a> 
     </div>
 
     <!-- MAIN JS;-->
