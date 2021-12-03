@@ -1,0 +1,26 @@
+/*=============== Varibles ===============*/
+  /********** Colors **********/
+  $first-color: #ffb3b2; /*standart kullandığımız renkler*/
+  $white-color: #fff;
+  $dark-color: #121212;
+  $white-color-text: #fff8f8;
+
+  /********** Fonts **********/
+  $body-font: "Roboto", sans-serif;
+
+  $bigger-font-size: 2.25rem; /*1 rem 16px olarak gelir */
+  $big-font-size: 1.5rem;
+  $normal-font-size: 0.813rem;
+
+  /********* Z Index *********/
+  $z-index: 100;
+
+  
+  @media screen and (min-width: 768px) {
+    /* 768 ve üzerinde ise */
+    :root {
+      --bigger-font-size: 4.5rem;
+      --big-font-size: 1.75rem;
+      --normal-font-size: 1rem;
+    }
+  }

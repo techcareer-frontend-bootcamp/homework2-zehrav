@@ -1,0 +1,83 @@
+/* Navbar - Menu */
+#header{
+    position: absolute; /*Yeni bir katmanda en üste gelir*/
+    width: 100%;
+  }
+  .show-menu{
+    top: 3rem;
+  }
+
+  .nav{
+     height: 3rem;
+     display: flex; /* Elementleri yanyana alır*/
+     justify-content: space-between; /* Yanlardan boşluk bırakarak hizalar*/
+     align-items: center; /*Dikey yönde hizalar*/
+     padding: 0 30px;
+  
+     .nav__logo{
+        font-size: var(--big-font-size);
+        color: $dark-color;
+        font-weight: bold;
+        letter-spacing: -1px;
+
+        span{
+            color: $white-color;
+          }
+      }
+      &__toggle{
+        display: inline;
+        cursor: pointer;
+
+        i {
+            font-size: 36px;
+          }
+      }
+
+        &__item {
+            &:not(:last-of-type){ /* en sonuncu nav item hariç hepsine margin bottom verir. Extra boşlukları önlemek için yazılır.*/
+                margin-bottom: 1.5rem;
+          }
+        }
+      
+        &__link{
+            color: #000;
+
+            &:hover{
+                color: green;
+              }
+
+            &.active{
+                background-color: $first-color;
+                padding: 0.5rem 1rem;
+                border-radius: 5px;
+                color: $white-color;
+                font-weight: bold;
+              }   
+        }
+    }
+  
+
+  @media screen and (max-width: 768px) {
+    .nav__menu{
+      position: fixed;
+      top: -100%; /*3rem*/
+      left: 0;
+      background-color:$white-color;
+      border-radius: 36px;
+       /* width:100%; Alanı Doldur */ 
+       width: calc(100% - 3rem); /* Menü alanında, aşağıdaki 1.5 - 1.5 rem'den dolayı taşma oldu. Bu yüzden 100% width den 3rem çıkarttık. */
+      height: auto; /* İçinde bulunan data kadar height verir. Data eklendikçe height büyür. */
+      margin: 0.5rem 1.5rem; /* Yukardan-aşağıdan ve Sağdan-soldan boşluk verir */
+      padding: 2rem 3rem;
+      z-index: $z-index;
+      font-weight: bold;
+      text-align: center;
+      transition: all 0.5s; /* yapılacak işlemler nekadar sürede gerçekleşecek */
+  
+    }
+  }
+
+
+  
+ 
+  
