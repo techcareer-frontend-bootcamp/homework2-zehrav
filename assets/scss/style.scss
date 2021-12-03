@@ -1,0 +1,99 @@
+/*============================== GOOGLE FONTS ==============================*/
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap");
+
+@import "variables/variables";
+@import "base/base";
+@import "components/header";
+
+/* HOME */
+.home{
+  background: url("../img/background.jpg") no-repeat center center / cover; /* Cover komple resmi alanda gösterir. */
+  height: 100vh; /* tüm yüksekliği kaplar */
+  min-height: 500px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 5rem;
+  flex-direction: column; /* yukarıdan aşağıya doğru sıralar */
+
+  &__title{
+    color: $white-color;
+    font-size: var(--big-font-size);
+    text-align: center;
+  
+  }
+  &__play{
+    text-align: center;
+
+    &-text{
+      margin-bottom:2rem ;
+    }
+  }
+
+  &__play-icon i{
+    background-color: var($first-color);
+    color: $white-color;
+    border-radius: 50%;
+    transition: all 0.5s; /*500 ms de yazılabilir. */
+  
+  }
+  .home__play-icon i:hover {
+    background-color: $dark-color;
+  }
+
+}
+
+/* Social Media */
+
+.social-media {
+  position: fixed;
+  right: 3%;
+  bottom: 0;
+  background-color: var($first-color);
+  padding: 0.75rem 1.5rem 0.35rem;
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+
+  i {
+
+    color: $white-color;
+    font-size: 30px;
+    margin: 0 7px;
+
+    &:hover{
+      color: $dark-color;
+    }
+  }
+}
+
+
+  
+/* Responsive */
+@media screen and (min-width: 768px) {
+.nav__list{
+  display: flex;
+  align-items: center;
+}
+.nav__item:not(:last-of-type){ /* en sonuncu nav item hariç hepsine margin bottom verir. Extra boşlukları önlemek için yazılır.*/
+  margin-bottom: 0;
+  margin-right: 1.5rem;
+}
+.nav__toggle{
+  display: none;
+}
+.home{
+  flex-direction: row; /* sağdan sola doğru sıralar */
+}
+.home__title{
+  text-align: left;
+}
+.home__play{
+  display: flex;
+  align-items: center;
+
+  &-text{
+    margin-bottom:0 ;
+  }
+}
+
+}

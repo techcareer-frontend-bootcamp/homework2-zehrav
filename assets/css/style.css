@@ -1,23 +1,14 @@
+@charset "UTF-8";
 /*============================== GOOGLE FONTS ==============================*/
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap");
-
 /*=============== Varibles ===============*/
-:root {
-  /********** Colors **********/
-  --first-color: #ffb3b2;
-  --white-color: #fff;
-  --dark-color: #121212;
-  --white-color-text: #fff8f8;
-
-  /********** Fonts **********/
-  --body-font: "Poppins", sans-serif;
-
-  --bigger-font-size: 2.25rem;
-  --big-font-size: 1.5rem;
-  --normal-font-size: 0.813rem;
-}
-
+/********** Colors **********/
+/*standart kullandığımız renkler*/
+/********** Fonts **********/
+/*1 rem 16px olarak gelir */
+/********* Z Index *********/
 @media screen and (min-width: 768px) {
+  /* 768 ve üzerinde ise */
   :root {
     --bigger-font-size: 4.5rem;
     --big-font-size: 1.75rem;
@@ -37,12 +28,16 @@
 
 html {
   scroll-behavior: smooth;
+  /* Aşağı doğru kayarken birden inmemesi için*/
 }
 
 body {
-  font-family: var(--body-font);
+  font-family: "Roboto", sans-serif;
+  /* yukarıda tanımlanan fontu variable ile kullanılışı*/
   font-size: var(--normal-font-size);
   overflow: hidden;
+  /* Taşma olursa scroll çıkarma */
+  background-image: url(/assets/img/ß);
 }
 
 h1,
@@ -60,8 +55,9 @@ ul {
 
 a {
   text-decoration: none;
-  color: #fff;
+  color: black;
   cursor: pointer;
+  /* üzerine geldğinde mouse işaretinin değişmesi */
 }
 
 img {
@@ -69,28 +65,181 @@ img {
   height: auto;
 }
 
-
 /* Navbar - Menu */
+#header {
+  position: absolute;
+  /*Yeni bir katmanda en üste gelir*/
+  width: 100%;
+}
 
+.show-menu {
+  top: 3rem;
+}
 
+.nav {
+  height: 3rem;
+  display: flex;
+  /* Elementleri yanyana alır*/
+  justify-content: space-between;
+  /* Yanlardan boşluk bırakarak hizalar*/
+  align-items: center;
+  /*Dikey yönde hizalar*/
+  padding: 0 30px;
+}
 
-/* Content */
+.nav .nav__logo {
+  font-size: var(--big-font-size);
+  color: #121212;
+  font-weight: bold;
+  letter-spacing: -1px;
+}
 
-  
+.nav .nav__logo span {
+  color: #fff;
+}
+
+.nav__toggle {
+  display: inline;
+  cursor: pointer;
+}
+
+.nav__toggle i {
+  font-size: 36px;
+}
+
+.nav__item:not(:last-of-type) {
+  /* en sonuncu nav item hariç hepsine margin bottom verir. Extra boşlukları önlemek için yazılır.*/
+  margin-bottom: 1.5rem;
+}
+
+.nav__link {
+  color: #000;
+}
+
+.nav__link:hover {
+  color: green;
+}
+
+.nav__link.active {
+  background-color: #ffb3b2;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  color: #fff;
+  font-weight: bold;
+}
+
+@media screen and (max-width: 768px) {
+  .nav__menu {
+    position: fixed;
+    top: -100%;
+    /*3rem*/
+    left: 0;
+    background-color: #fff;
+    border-radius: 36px;
+    /* width:100%; Alanı Doldur */
+    width: calc(100% - 3rem);
+    /* Menü alanında, aşağıdaki 1.5 - 1.5 rem'den dolayı taşma oldu. Bu yüzden 100% width den 3rem çıkarttık. */
+    height: auto;
+    /* İçinde bulunan data kadar height verir. Data eklendikçe height büyür. */
+    margin: 0.5rem 1.5rem;
+    /* Yukardan-aşağıdan ve Sağdan-soldan boşluk verir */
+    padding: 2rem 3rem;
+    z-index: 100;
+    font-weight: bold;
+    text-align: center;
+    transition: all 0.5s;
+    /* yapılacak işlemler nekadar sürede gerçekleşecek */
+  }
+}
+
+/* HOME */
+.home {
+  background: url("../img/background.jpg") no-repeat center center/cover;
+  /* Cover komple resmi alanda gösterir. */
+  height: 100vh;
+  /* tüm yüksekliği kaplar */
+  min-height: 500px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 5rem;
+  flex-direction: column;
+  /* yukarıdan aşağıya doğru sıralar */
+}
+
+.home__title {
+  color: #fff;
+  font-size: var(--big-font-size);
+  text-align: center;
+}
+
+.home__play {
+  text-align: center;
+}
+
+.home__play-text {
+  margin-bottom: 2rem;
+}
+
+.home__play-icon i {
+  background-color: var(#ffb3b2);
+  color: #fff;
+  border-radius: 50%;
+  transition: all 0.5s;
+  /*500 ms de yazılabilir. */
+}
+
+.home .home__play-icon i:hover {
+  background-color: #121212;
+}
 
 /* Social Media */
-
 .social-media {
   position: fixed;
   right: 3%;
   bottom: 0;
-  background-color: var(--first-color);
+  background-color: var(#ffb3b2);
   padding: 0.75rem 1.5rem 0.35rem;
   border-top-left-radius: 15px;
   border-top-right-radius: 15px;
 }
-  
+
+.social-media i {
+  color: #fff;
+  font-size: 30px;
+  margin: 0 7px;
+}
+
+.social-media i:hover {
+  color: #121212;
+}
+
 /* Responsive */
 @media screen and (min-width: 768px) {
-
+  .nav__list {
+    display: flex;
+    align-items: center;
+  }
+  .nav__item:not(:last-of-type) {
+    /* en sonuncu nav item hariç hepsine margin bottom verir. Extra boşlukları önlemek için yazılır.*/
+    margin-bottom: 0;
+    margin-right: 1.5rem;
+  }
+  .nav__toggle {
+    display: none;
+  }
+  .home {
+    flex-direction: row;
+    /* sağdan sola doğru sıralar */
+  }
+  .home__title {
+    text-align: left;
+  }
+  .home__play {
+    display: flex;
+    align-items: center;
+  }
+  .home__play-text {
+    margin-bottom: 0;
+  }
 }

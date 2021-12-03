@@ -1,0 +1,46 @@
+/* Base Css */
+*,
+::before, /* before ve after değerlerinide sıfırla */
+::after {
+  box-sizing: border-box;
+  text-decoration: none;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth; /* Aşağı doğru kayarken birden inmemesi için*/
+}
+
+body {
+  font-family: $body-font; /* yukarıda tanımlanan fontu variable ile kullanılışı*/
+  font-size: var(--normal-font-size);
+  overflow: hidden; /* Taşma olursa scroll çıkarma */
+  background-image: url(/assets/img/ß);
+}
+
+h1,
+h2,
+h3,
+p,
+ul {
+  margin: 0;
+  padding: 0;
+}
+
+ul {
+  list-style: none;
+
+}
+
+a {
+  text-decoration: none;
+  color: black;
+  cursor: pointer; /* üzerine geldğinde mouse işaretinin değişmesi */
+
+}
+
+img{
+  max-width: 100%;
+  height: auto;
+}
